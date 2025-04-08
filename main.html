@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roamio - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Roamio</h1>
+            </div>
+            <div class="nav-links">
+                <a href="main.html" class="active">Home</a>
+                <a href="hotels.html">Hotels</a>
+                <a href="holiday-homes.html">Holiday Homes</a>
+                <a href="villas.html">Villas</a>
+                
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="user-actions">
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Find Your Perfect Stay</h1>
+                <p>Discover amazing hotels across India</p>
+                
+                <div class="search-container">
+                    <form id="searchForm" class="search-form">
+                        <div class="search-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="location" placeholder="Enter any city name" required>
+                            <div class="suggestions" id="citySuggestions"></div>
+                        </div>
+                        
+                        <div class="search-filters">
+                            <div class="filter">
+                                <label for="checkIn">Check In</label>
+                                <div class="search-box">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="checkIn" required>
+                                </div>
+                            </div>
+                            
+                            <div class="filter">
+                                <label for="checkOut">Check Out</label>
+                                <div class="search-box">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="checkOut" required>
+                                </div>
+                            </div>
+                            
+                            <div class="filter">
+                                <label for="guests">Guests</label>
+                                <div class="search-box">
+                                    <i class="fas fa-users"></i>
+                                    <select id="guests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5+ Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i> Search Hotels
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Deals Section -->
+        <section class="hot-deals">
+            <div class="container">
+                <h2>Hot Deals Right Now</h2>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Hotel">
+                            <div class="deal-badge">Save 40%</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3>Luxury Resort & Spa</h3>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Goa, India</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹12,999</span>
+                                <span class="discounted-price">₹7,799</span>
+                                <span class="per-night">/night</span>
+                            </div>
+                            <div class="deal-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5 (120 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beach Resort">
+                            <div class="deal-badge">Save 35%</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3>Beachfront Paradise</h3>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹9,999</span>
+                                <span class="discounted-price">₹6,499</span>
+                                <span class="per-night">/night</span>
+                            </div>
+                            <div class="deal-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (85 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mountain View Hotel">
+                            <div class="deal-badge">Save 30%</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3>Mountain View Retreat</h3>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Manali, India</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹8,999</span>
+                                <span class="discounted-price">₹6,299</span>
+                                <span class="per-night">/night</span>
+                            </div>
+                            <div class="deal-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.0 (95 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Searches Section -->
+        <section class="popular-searches">
+            <div class="container">
+                <h2>Popular Searches</h2>
+                <div class="searches-grid">
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Goa">
+                        <div class="search-overlay">
+                            <h3>Goa</h3>
+                            <p>1,234 hotels</p>
+                        </div>
+                    </div>
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kerala">
+                        <div class="search-overlay">
+                            <h3>Kerala</h3>
+                            <p>987 hotels</p>
+                        </div>
+                    </div>
+                    <div class="search-card">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Manali">
+                        <div class="search-overlay">
+                            <h3>Manali</h3>
+                            <p>765 hotels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Hotels Section -->
+        <section class="available-hotels">
+            <div class="container">
+                <h2>Available Hotels</h2>
+                <div class="hotels-grid" id="hotelsContainer">
+                    <!-- Hotels will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hotels</h3>
+                    <p>Premium stays with modern amenities</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Holiday Homes</h3>
+                    <p>Comfortable homes away from home</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Beach Resorts</h3>
+                    <p>Luxury stays by the beach</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Hill Stations</h3>
+                    <p>Scenic stays in the mountains</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-download">
+            <div class="app-content">
+                <h2>Download the Roamio App</h2>
+                <p>Get exclusive deals and easy booking on the go</p>
+                <div class="app-buttons">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i>
+                        <div>
+                            <span>Download on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i>
+                        <div>
+                            <span>Get it on</span>
+                            <span>Google Play</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Roamio</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h3>Partner With Us</h3>
+                <a href="#">List Your Property</a>
+                <a href="#">Become a Partner</a>
+                <a href="#">Travel Agent</a>
+                <a href="#">Corporate</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Roamio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

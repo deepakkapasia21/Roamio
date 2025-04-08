@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roamio - Hotels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Roamio</h1>
+            </div>
+            <div class="nav-links">
+                <a href="main.html">Home</a>
+                <a href="hotels.html" class="active">Hotels</a>
+                <a href="holiday-homes.html">Holiday Homes</a>
+                <a href="villas.html">Villas</a>
+                <a href="features.html">Features</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="user-actions">
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section hotels-hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Hotel</h1>
+                <p>Discover amazing hotels across India</p>
+                
+                <div class="search-container">
+                    <form id="searchForm" class="search-form">
+                        <div class="search-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="location" placeholder="Enter any city name" required>
+                            <div class="suggestions" id="citySuggestions"></div>
+                        </div>
+                        
+                        <div class="search-filters">
+                            <div class="filter">
+                                <label for="checkIn">Check In</label>
+                                <div class="search-box">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="checkIn" required>
+                                </div>
+                            </div>
+                            
+                            <div class="filter">
+                                <label for="checkOut">Check Out</label>
+                                <div class="search-box">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="checkOut" required>
+                                </div>
+                            </div>
+                            
+                            <div class="filter">
+                                <label for="guests">Guests</label>
+                                <div class="search-box">
+                                    <i class="fas fa-users"></i>
+                                    <select id="guests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5+ Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i> Search Hotels
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="hotel-filters">
+            <div class="container">
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-slider">
+                            <input type="range" min="0" max="50000" value="25000" class="slider" id="priceRange">
+                            <div class="price-values">
+                                <span>₹0</span>
+                                <span>₹50,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Star Rating</h3>
+                        <div class="rating-filters">
+                            <label><input type="checkbox" value="5"> 5 Stars</label>
+                            <label><input type="checkbox" value="4"> 4 Stars</label>
+                            <label><input type="checkbox" value="3"> 3 Stars</label>
+                            <label><input type="checkbox" value="2"> 2 Stars</label>
+                            <label><input type="checkbox" value="1"> 1 Star</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Amenities</h3>
+                        <div class="amenity-filters">
+                            <label><input type="checkbox" value="wifi"> Free WiFi</label>
+                            <label><input type="checkbox" value="pool"> Swimming Pool</label>
+                            <label><input type="checkbox" value="spa"> Spa</label>
+                            <label><input type="checkbox" value="gym"> Gym</label>
+                            <label><input type="checkbox" value="restaurant"> Restaurant</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="available-hotels">
+            <div class="container">
+                <div class="hotels-header">
+                    <h2>Available Hotels</h2>
+                    <div class="sort-options">
+                        <select id="sortBy">
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="rating-desc">Rating: High to Low</option>
+                            <option value="rating-asc">Rating: Low to High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="hotels-grid" id="hotelsContainer">
+                    <!-- Hotels will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Roamio</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h3>Partner With Us</h3>
+                <a href="#">List Your Property</a>
+                <a href="#">Become a Partner</a>
+                <a href="#">Travel Agent</a>
+                <a href="#">Corporate</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Roamio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
